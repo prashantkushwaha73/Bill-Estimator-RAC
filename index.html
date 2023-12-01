@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAC</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="js.js"></script>
+</head>
+<body>
+
+  <audio id="sounds" loop= "false" volume = "60">
+    <source src="sound" id="A" type="audio/wav">
+    <source src="sounds/boom.wav" id="S" type="audio/wav">
+    <source src="sounds/hihat.wav" id="D" type="audio/wav">
+    <source src="sounds/kick.wav" id="F" type="audio/wav">
+    <source src="sounds/snare.wav" id="G" type="audio/wav">
+    <source src="sounds/ride.wav" id="H" type="audio/wav">
+    <source src="sounds/tom.wav" id="J" type="audio/wav">
+  </audio> 
+
+
+    <div class="container">
+        <h1 class="fs-2">Wants to buy an air conditioner ?</h1>
+        <p class="fs-4 fs-sm-2 ">Estimate your monthly bill here &#8595;</p>
+    </div>
+    
+    <div id="front"><div class="container1">
+        <div class="box">
+            <div>
+            <input required type="number" class="p-3" id="ton" aria-describedby="emailHelp"  step="any" placeholder="Enter the Refrigeration capacity ( In Ton )"></div>
+            <div>
+            <input required type="number" class="p-3" id="hours" aria-describedby="emailHelp" step="any" placeholder="Your usage per day ( In Hours )"> </div>
+            <div>
+            <input required type="number" class="p-3" id="cost" step="any"  placeholder="Cost per unit ( In Rupees )"></div>
+           <div> <button onclick="assign()" >Get your results !</button> </div>
+        </div>
+    </div></div>
+
+    <div class="container" id="back">
+        <div class="row mt-4 d-flex justify-content-around">
+    
+            <div class="col-7">
+                <table class="table ">
+                  <div><div style="cursor:pointer" onclick="tableToCSV()" >	<img style="margin:20px; float: right;" width="30px" src="images/file.png" alt=""> </div></div>
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col" class="text-center">Outside Temperature</th>
+                        <th scope="col" class="text-center">Inside Temperature</th>
+                        <th scope="col" class="text-center">Monthly Bill ( &#8377; )</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th rowspan="5" scope="row">1</th>
+                        <td rowspan="5" > 50 &#8451; </td>
+                        <td>18 &#8451;</td>
+                        <td id="50.1">Rs</td>
+                      </tr>
+                      <tr>
+                        <td>20 &#8451;</td>
+                        <td id="50.2">Rs</td>
+                      </tr>
+                      <tr>
+                        <td>22 &#8451;</td>
+                        <td id="50.3">Rs</td>
+                      </tr>
+                      <tr>
+                        <td>24 &#8451;</td>
+                        <td id="50.4">Rs</td>
+                      </tr>
+                      <tr>
+                        <td>26 &#8451;</td>
+                        <td id="50.5">Rs</td>
+                      </tr>
+
+                      <tr>
+                        <th rowspan="5" scope="row">2</th>
+                        <td rowspan="5" >45 &#8451;</td>
+                        <td>18 &#8451;</td>
+                        <td id="45.1">Rs</td>
+                      </tr>
+                      <tr>
+                        <td>20 &#8451;</td>
+                        <td id="45.2">Rs</td>
+                      </tr>
+                      <tr>
+                        <td>22 &#8451;</td>
+                        <td id="45.3">Rs</td>
+                      </tr>
+                      <tr>
+                        <td>24 &#8451;</td>
+                        <td id="45.4">Rs</td>
+                      </tr>
+                      <tr>
+                        <td>26 &#8451;</td>
+                        <td id="45.5">Rs</td>
+                      </tr>
+
+                      <tr>
+                        <th rowspan="5" scope="row">3</th>
+                        <td rowspan="5" >40 &#8451;</td>
+                        <td>18 &#8451;</td>
+                        <td id="40.1">Rs</td>
+                      </tr>
+                      <tr>
+                        <td>20 &#8451;</td>
+                        <td id="40.2">Rs</td>
+                      </tr>
+                      <tr>
+                        <td>22 &#8451;</td>
+                        <td id="40.3">Rs</td>
+                      </tr>
+                      <tr>
+                        <td>24 &#8451;</td>
+                        <td id="40.4">Rs</td>
+                      </tr>
+                      <tr>
+                        <td>26 &#8451;</td>
+                        <td id="40.5">Rs</td>
+                      </tr>
+
+                      <tr>
+                        <th rowspan="5" scope="row">4</th>
+                        <td rowspan="5" >35 &#8451;</td>
+                        <td>18 &#8451;</td>
+                        <td id="35.1">Rs</td>
+                      </tr>
+                      <tr>
+                        <td>20 &#8451;</td>
+                        <td id="35.2">Rs</td>
+                      </tr>
+                      <tr>
+                        <td>22 &#8451;</td>
+                        <td id="35.3">Rs</td>
+                      </tr>
+                      <tr>
+                        <td>24 &#8451;</td>
+                        <td id="35.4">Rs</td>
+                      </tr>
+                      <tr>
+                        <td>26 &#8451;</td>
+                        <td id="35.5">Rs</td>
+                      </tr>
+
+
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        </div>
+
+        <script type="text/javascript">
+          function tableToCSV() {
+   
+              // Variable to store the final csv data
+              var csv_data = [];
+   
+              // Get each row data
+              var rows = document.getElementsByTagName('tr');
+              for (var i = 0; i < rows.length; i++) {
+   
+                  // Get each column data
+                  var cols = rows[i].querySelectorAll('td,th');
+   
+                  // Stores each csv row data
+                  var csvrow = [];
+                  for (var j = 0; j < cols.length; j++) {
+   
+                      // Get the text data of each cell
+                      // of a row and push it to csvrow
+                      csvrow.push(cols[j].innerHTML);
+                  }
+   
+                  // Combine each column value with comma
+                  csv_data.push(csvrow.join(","));
+              }
+   
+              // Combine each row data with new line character
+              csv_data = csv_data.join('\n');
+   
+              // Call this function to download csv file 
+              downloadCSVFile(csv_data);
+   
+          }
+   
+          function downloadCSVFile(csv_data) {
+   
+              // Create CSV file object and feed
+              // our csv_data into it
+              CSVFile = new Blob([csv_data], {
+                  type: "text/csv"
+              });
+   
+              // Create to temporary link to initiate
+              // download process
+              var temp_link = document.createElement('a');
+   
+              // Download csv file
+              temp_link.download = "data...";
+              var url = window.URL.createObjectURL(CSVFile);
+              temp_link.href = url;
+   
+              // This link should not be displayed
+              temp_link.style.display = "none";
+              document.body.appendChild(temp_link);
+   
+              // Automatically click the link to
+              // trigger download
+              temp_link.click();
+              document.body.removeChild(temp_link);
+          }
+      </script>
+</body>
+</html>
